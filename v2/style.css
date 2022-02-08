@@ -1,0 +1,307 @@
+/* desktop version first */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: "Thany";
+    src: url("style/font/Thany.otf") format("otf");
+}
+
+:root {
+    --margin-left-bio: 100px;
+    --margin-left: 65px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #002c8b;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    position: relative;
+
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.font-lighter {
+    font-weight: 300;
+}
+
+/* intro */
+
+.intro-container {
+    height: 100vh;
+}
+
+/* Intro Image */
+.image-container {
+    position: absolute;
+    z-index: -1;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.image-container img{
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    filter: blur(20px);
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 94vw;
+    padding-top: 3vh;
+    margin: 0 3vw;
+}
+
+.nav-toggle {
+    display: none;
+  }
+  
+.nav-toggle-label {
+    font-size: 2rem;
+    color: white;
+    display: none;
+  }
+
+/* Header Logo*/
+.logo {
+    border-color: white;
+    border-width: 5px;
+    border-style: solid;
+}
+
+.logo p {
+    font-size: 2.5em;
+    font-family: "Thany";
+    padding: 2px 30px 2px 20px;
+    text-align: center;
+}
+/* Header Links */
+header ul {
+    display: flex;
+    list-style: none;
+
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.75em;
+    margin: 0px 20px;
+}
+
+/* Intro */
+
+.bio-container {
+    display: flex;
+    align-items: center;
+    margin-left: var(--margin-left-bio);
+    height: 83%;
+}
+
+.bio-image {
+    border-radius: 50%;
+    height: 300px;
+}
+
+.bio {
+    width: 75ch;
+    margin-left: 50px;
+}
+
+.bio h1 {
+    font-size: 3rem;
+}
+
+.bio p {
+    font-size: 1.5rem;
+}
+
+.separator {
+    height: 15px;
+    width: 50%;
+    background-color: white;
+    margin: 10px 0px;
+}
+
+/* scroll down symbol */
+
+.scroll-down-sign {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.scroll-down-sign p {
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+.scroll-down-sign .center {
+    text-align: center;
+    width: 100%;
+    font-size: 65px;
+}
+
+/* experience, education, projects, skills, and contact me */
+
+.box {
+    background-color: #FFF;
+    color: black;
+    border-radius: 25px;
+    padding: 20px;
+    min-height: 600px;
+    width: 40ch;
+    justify-self: center;
+    box-shadow:
+    0px 0px 5.2px rgba(0, 0, 0, 0.022),
+    0px 0px 17.4px rgba(0, 0, 0, 0.035),
+    0px 0px 78px rgba(0, 0, 0, 0.09)
+  ;
+}
+
+.experience, .education, .projects, .skills, .contact-me {
+    padding-top: 65px;
+    padding-bottom: 65px;
+    height: 800px;
+}
+
+.experience h2, .education h2, .projects h2, .skills h2, .contact-me h2{
+    padding-left: var(--margin-left);
+    font-size: 2rem;
+}
+
+.experience-container, .education-container, .projects-container {
+    display: grid;
+    margin: var(--margin-left) var(--margin-left) 0 var(--margin-left);
+    gap: 5rem;
+}
+
+/* experience */
+
+.experience {
+    background-color: #F5F6FA;
+    color: black;
+}
+
+.experience-container {
+    grid-template-columns: repeat(3,1fr);
+}
+
+/* education */
+
+.education {
+    background-color: #c1c7e0;
+    color: black;
+}
+
+.education-container {
+    grid-template-columns: repeat(2,1fr);
+}
+
+/* Projects */
+.projects {
+    background-color: #8c98c6;
+    color: black;
+}
+
+/* Skills */
+.skills {
+    background-color: #5869ac;
+    color: white;
+}
+
+/* Contact Me */
+.contact-me {
+    background-color: #465489;
+    color: white;
+}
+
+.fade {
+    opacity: 0;
+}
+
+/* Mobile */
+
+@media (max-width: 1000px) {
+
+    header ul {
+        display: none;
+    }
+
+    .nav-toggle-label {
+        font-size: 2rem;
+        color: white;
+        display: unset;
+        z-index: 1000;
+      }
+
+    .nav-toggle ~ nav {
+        display: none;
+      }
+    .nav-toggle:checked ~ ul {
+        position: absolute;
+        display: block;
+        height: 100vh;
+        inset: 0;
+        text-align: right;
+        padding-top: 60px;
+        padding-right: 20px;
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+    .bio-container {
+        display: grid;
+        margin-left: 0px;
+        align-items: center;
+        margin-bottom: 65px;
+    }
+
+    .bio-image {
+        padding: 0 30px;
+    }
+
+    .bio {
+        width: 100%;
+        margin-left: 0;
+        padding: 0 30px;
+    }
+
+    .bio h1 {
+        font-size: 2rem;
+    }
+
+    .bio p {
+        font-size: 1.25rem;
+    }
+    .scroll-down-sign {
+        display: none;
+    }
+    .experience-container, .education-container, .projects-container {
+        display: grid;
+        margin: var(--margin-left) 0 0 0;
+        gap: 5rem;
+    }
+    .experience-container {
+        grid-template-columns: repeat(1,1fr);
+    }
+    .education-container {
+        grid-template-columns: repeat(1,1fr);
+    }
+}
