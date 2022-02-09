@@ -14,9 +14,7 @@
 }
 
 :root {
-    --margin-left-bio: 100px;
-    --margin-left: 65px;
-    --margin-left-mobile: 30px;
+    --margin-left: 150px;
     
     --dark-mode-foreground-color: white;
     --dark-mode-background-color: #171717;
@@ -36,6 +34,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     color: var(--foreground-color);
     position: relative;
+    overflow-x: hidden;
 
 }
 
@@ -94,7 +93,7 @@ header {
     justify-content: space-between;
     align-items: center;
 
-    padding: 10px 150px;
+    padding: 10px var(--margin-left);
 }
 
 .nav-toggle {
@@ -215,104 +214,134 @@ header ul a:hover {
     font-size: 65px;
 }
 
-/* divider */
-.custom-shape-divider-top-1644099056 {
+/* experience, education, projects, skills, and contact me */
+#experience {
+    background-color: #ff0066;
+}
+#education {
+    background-color: #f5b700;
+}
+#projects {
+    background-color: #00e05a;
+}
+
+#skills {
+    background-color: #0066ff;
+}
+
+.resume-container {
+    display:grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+    transform: translate(-0%,0%);
+    transition: 1s ease-in;
+}
+
+
+
+.resume {
+    position: relative;
+}
+
+.resume-container h2{
+    font-size: 2rem;
+}
+
+.resume-container .resume-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 150px var(--margin-left) 10px var(--margin-left);
+}
+
+
+.resume-container .header-link {
+    font-size: 1.2em;
+    text-decoration: none;
+    display: flex;
+    color: var(--foreground-color);
+    border-radius: 100px;
+    border-width: 5px;
+    border: 3px solid var(--foreground-color);
+    padding: 10px 35px;
+    white-space: nowrap;
+}
+
+.resume-card{
+    background-color: #fff;
+    width: 35ch;
+    margin: 5px 25px;
+    border-radius: 30px;
+}
+
+.resume-card .card-title {
+    color: black;
+    font-weight: bold;
+    font-size: 1.3rem;
+    padding: 30px 30px 0 30px;
+}
+
+.resume-card .card-subtitle {
+    color: black;
+    font-weight: 100;
+    font-size: 1.1rem;
+    padding: 0 30px;
+}
+
+.resume-card .card-text {
+    color: black;
+    font-size: 1.1rem;
+    padding: 0px 30px;
+    
+}
+
+.resume-card .card-text:last-child {
+    color: black;
+    font-size: 1.1rem;
+    padding: 0px 30px 30px 30px;
+    
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+
+
+
+
+
+/* separator */
+.custom-shape-divider-top-1644365484 {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     overflow: hidden;
     line-height: 0;
+    z-index: 100;
 }
 
-.custom-shape-divider-top-1644099056 svg {
+.custom-shape-divider-top-1644365484 svg {
     position: relative;
     display: block;
     width: calc(100% + 1.3px);
-    height: 66px;
+    height: 122px;
 }
 
-.custom-shape-divider-top-1644099056 .shape-fill {
+.custom-shape-divider-top-1644365484 .shape-fill {
     fill: #171717;
 }
 
-/* experience, education, projects, skills, and contact me */
 
-.box {
-    background-color: #FFF;
-    color: black;
-    border-radius: 25px;
-    padding: 20px;
-    min-height: 600px;
-    width: 40ch;
-    justify-self: center;
-    box-shadow:
-    0px 0px 5.2px rgba(0, 0, 0, 0.022),
-    0px 0px 17.4px rgba(0, 0, 0, 0.035),
-    0px 0px 78px rgba(0, 0, 0, 0.09)
-  ;
+.buttons {
+    height: 50px;
+    width: 50px;
+    background-color: red;
 }
-
-.experience, .education, .projects, .skills, .contact-me {
-    padding-top: 65px;
-    padding-bottom: 65px;
-}
-
-.experience h2, .education h2, .projects h2, .skills h2, .contact-me h2{
-    padding-left: var(--margin-left);
-    font-size: 2rem;
-}
-
-.experience-container, .education-container, .projects-container {
-    display: grid;
-    margin: var(--margin-left) var(--margin-left) 0 var(--margin-left);
-    gap: 5rem;
-}
-
-/* experience */
-
-.experience {
-    background-color: #ff0066;
-    color: black;
-}
-
-.experience-container {
-    grid-template-columns: repeat(3,1fr);
-}
-
-/* education */
-
-.education {
-    background-color: #0066ff;
-    color: black;
-}
-
-.education-container {
-    grid-template-columns: repeat(2,1fr);
-}
-
-/* Projects */
-.projects {
-    background-color: #00e6ff;
-    color: black;
-}
-
-/* carousel */
-
-.carousel-indicators li {
-    background-color: var(--background-color);
-}
-
-
-
-
-
-
-
-
-
-
-
 
 
 
