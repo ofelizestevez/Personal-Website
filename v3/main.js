@@ -12,7 +12,8 @@ var targetDiv = document.getElementById("resume")
 
 function resume_container_mover(page){
   pixel = page * -100
-  console.log( "translate($pixel %)".replace("$pixel",pixel))
+  document.getElementsByClassName("active")[0].classList.remove("active")
+  document.getElementsByClassName("pagination-circle")[page].classList.add("active")
   document.getElementById("resume").style.transform = "translate($pixel%)".replace("$pixel",pixel)
 }
 
